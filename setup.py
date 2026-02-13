@@ -9,6 +9,7 @@ setup(
     data_files=[
         ("share/ament_index/resource_index/packages", [f"resource/{package_name}"]),
         (f"share/{package_name}", ["package.xml"]),
+        (f"share/{package_name}/launch", ["launch/franka_joint_publisher.launch.py"]),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
@@ -18,7 +19,7 @@ setup(
     license="MIT",
     entry_points={
         "console_scripts": [
-            "franka_twin_node = franka_twin.franka_twin_node:main",
+            "franka_joint_publisher = franka_twin.franka_joint_publisher:main",
         ],
     },
 )
